@@ -14,6 +14,7 @@ function incrementClick() {
   }
 
   console.log(RandomNumber());
+  save()
 }
 
 
@@ -28,6 +29,7 @@ if (RandomNumber() >5) {
   enemyScore+=3
 }
 
+save()
 }
 
 //NOTE  HAVE TO RETURN THE VALUE USING return()
@@ -38,5 +40,10 @@ function RandomNumber() {
 
 
 function save(){
-  window.localStorage.setItem(Score)
+  window.localStorage.setItem('Score', teamScore)
+  console.log('it worked?');
+}
+
+function load(){
+  window.localStorage.getItem('Score')
 }
