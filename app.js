@@ -1,32 +1,40 @@
 let teamScore = 0;
-let enemyScore = 0;
+let awayScore = 0;
 let Score = document.querySelector('#Score');
 let ScoreTwo = document.querySelector('#enemyScore');
 
+
+
 function incrementClick() {
   Score.innerText = teamScore;
-  ScoreTwo.innerText = enemyScore;
-
+  ScoreTwo.innerText = awayScore;
+ 
   if (RandomNumber() > 5) {
     teamScore++;
+ 
   } else {
-    enemyScore++;
+    awayScore++;
   }
 
-  console.log(RandomNumber());
   save()
+  console.log(RandomNumber());
 }
 
 
 
 
+function draw(){
+  
+}
+
+
 function risky(){
   Score.innerText = teamScore;
-  ScoreTwo.innerText = enemyScore
+  ScoreTwo.innerText = awayScore
 if (RandomNumber() >5) {
   teamScore+=3
 }else{
-  enemyScore+=3
+  awayScore+=3
 }
 
 save()
@@ -38,12 +46,17 @@ function RandomNumber() {
   return Math.floor(Math.random() * 10);
 }
 
+// NOTE  when saving something to local storage you use set
+
+// window.localStorage.setitem('Key-Name'), JSON.stringify(value)
 
 function save(){
-  window.localStorage.setItem('Score', teamScore)
-  console.log('it worked?');
+  window.localStorage.setItem('Score', JSON.stringify(teamScore))
+  window.localStorage.setItem('AwayScore', JSON.stringify( awayScore) )
+  console.log('Team:',teamScore, 'Away:', awayScore );
 }
 
 function load(){
-  window.localStorage.getItem('Score')
+ var scoreData= JSON.parse(localStorage.getItem('Score'))
+ var awayData = JSON.parse(localStorage.getItem('AwayScore'))
 }
