@@ -50,7 +50,7 @@
   </style>
   <!-- !SECTION -->
 
-  <body>
+  <body class="">
     <header class="container-fluid bg-dark text-orange p-5">
       <div class="row justify-content-center ">
         <div class="col-md-6 text-center "><h1>Score-Board</h1></div>
@@ -68,24 +68,31 @@
         </div>
         <!-- !SECTION -->
 
-        <!-- SECTION BUTTON -->
+        
+        <!-- SECTION TEAM SCORE -->
         <div class="row justify-content-center">
           <div class="col-md-4  d-flex justify-content-center p-3  ">
-           <button  type="button" id="PlayButton" onclick="incrementClick()" class="btn btn-dark text-light">Play</button>
+            
+            <div class="pe-5 fs-1"> <span id="Score">0 </span> </div>
+            <div class=" fs-1"> <span id="enemyScore"> 0 </span></div>
+            
             
           </div>
-        </div>
-        <!-- !SECTION -->
-
-<!-- SECTION TEAM SCORE -->
-<div class="row justify-content-center">
-  <div class="col-md-4  d-flex justify-content-center p-3  ">
- 
-  <div class="pe-5 fs-1"> <span id="Score">0 </span> </div>
-  <div class=" fs-1"> <span id="enemyScore"> 0 </span></div>
-    
- 
-</div>
+          <!-- SECTION BUTTON -->
+          <div class="row justify-content-center">
+            <div class="col-md-4  d-flex justify-content-center p-3  ">
+              <div class="pe-5">
+                <button  type="button" id="PlayButton" onclick="incrementClick()" class="btn btn-dark text-light ">Play</button>
+        
+              </div>
+              <div class="">
+                <button  type="button" id="PlayButton" onclick="risky()" class="btn btn-dark text-light">RiskyPlay</button>
+        
+              </div>
+              
+            </div>
+          </div>
+          <!-- !SECTION -->
 <!-- !SECTION -->
 
       </section>
