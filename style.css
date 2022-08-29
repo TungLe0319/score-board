@@ -1,0 +1,17 @@
+*{
+  font-family: 'Audiowide', cursive
+}
+
+:root{
+--primary:#dee2e6;
+--bs-orange: #fd7e14;
+}
+
+
+.text-orange{
+  
+  color: var(--bs-orange);
+}
+.bg-orange{
+  background-color: var(--bs-orange);
+}
