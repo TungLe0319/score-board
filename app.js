@@ -1,67 +1,52 @@
+// NOTE  🌏  GLOBAL VARIABLES
 let teamScore = 0;
 let awayScore = 0;
 let Score = document.querySelector('#Score');
 let ScoreTwo = document.querySelector('#enemyScore');
 
-function incrementClick() {
-  // Score.innerText = teamScore;
-  // ScoreTwo.innerText = awayScore;
+function Play() {
+  awayScore++;
 
-  if (RandomNumber() > 5) {
-    teamScore++;
-  } else {
-    awayScore++;
-  }
-  draw();
   save();
-
-  console.log(RandomNumber());
 }
 
-function draw() {
- 
-  Score.innerText = teamData;
-  ScoreTwo.innerText = awayData;
+function Play2() {
+  teamScore++;
+  save();
 }
 
 function risky() {
-  Score.innerText = teamScore;
-  ScoreTwo.innerText = awayScore;
-  if (RandomNumber() > 5) {
-    teamScore += 3;
-  } else {
-    awayScore += 3;
-  }
+  teamScore += 3;
 
   save();
+}
+
+function risky2() {
+  awayScore += 3;
+
+  save();
+}
+
+// window.localStorage.setitem('Key-Name'), JSON.stringify(value)
+function save() {
+  window.localStorage.setItem('Score', JSON.stringify(teamScore));
+  window.localStorage.setItem('AwayScore', JSON.stringify(awayScore));
+  load();
+  console.log('Team:', teamScore, 'Away:', awayScore);
+}
+
+function load() {
+  let teamData = JSON.parse(window.localStorage.getItem('Score'));
+  let awayData = JSON.parse(window.localStorage.getItem('AwayScore'));
+
+  Score.innerText = teamData;
+
+  ScoreTwo.innerText = awayData;
 }
 
 //NOTE  HAVE TO RETURN THE VALUE USING return()
 //NOTE The Math.floor() function returns the largest integer less than or equal to a given number.
+// NOTE a Function is a set of insutrctions that the computer can use whenever it wants. 
 function RandomNumber() {
   return Math.floor(Math.random() * 10);
-}
-
-// NOTE  when saving something to local storage you use set
-
-// window.localStorage.setitem('Key-Name'), JSON.stringify(value)
-
-function save() {
-  window.localStorage.setItem('Score', JSON.stringify(teamScore));
-  window.localStorage.setItem('AwayScore', JSON.stringify(awayScore));
-  console.log('Team:', teamScore, 'Away:', awayScore);
-}
-
-function loadTeam() {
-  let teamData = JSON.parse(localStorage.getItem('Score'));
-  if (teamData) {
-    Score = teamData;
-  }
-}
-
-function loadAway() {
-  let awayData = JSON.parse(localStorage.getItem('AwayScore'));
-  if (awayData) {
-    ScoreTwo = awayData;
-  }
 }

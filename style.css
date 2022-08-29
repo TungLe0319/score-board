@@ -8,6 +8,16 @@
 }
 
 
+.fs-custom{
+  font-size: 30pt;
+}
+
+.banner{
+  background-image: url(./86e2a6cf77b4acdf1e4b49464683ddb1.jpeg);
+  background-size: cover;
+  background-position: center;
+}
+
 .text-orange{
   
   color: var(--bs-orange);

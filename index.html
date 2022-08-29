@@ -61,32 +61,52 @@
         <!-- SECTION TEAM NAMES -->
         <div class="row justify-content-center p-2 pt-5">
           <div class="col-md-10 d-flex justify-content-center">
+
             <div class="pe-5"><h1>Team</h1></div>
             <div><h1>Enemy</h1></div>
             
+            </div>
+
+
+
           </div>
         </div>
         <!-- !SECTION -->
 
         
         <!-- SECTION TEAM SCORE -->
+
+        
         <div class="row justify-content-center">
           <div class="col-md-4  d-flex justify-content-center p-3  ">
             
-            <div class="pe-5 fs-1"> <span id="Score">0 </span> </div>
-            <div class=" fs-1"> <span id="enemyScore"> 0 </span></div>
+            <div class="pe-5 fs-custom"> <span id="Score"><h1>0</h1> </span> </div>
+            <div class=" fs-custom"> <span id="enemyScore"> <h1>0</h1> </span></div>
             
             
           </div>
           <!-- SECTION BUTTON -->
           <div class="row justify-content-center">
-            <div class="col-md-4  d-flex justify-content-center p-3  ">
+            <div class="col-md-10  d-flex justify-content-between p-3  ">
               <div class="pe-5">
-                <button  type="button" id="PlayButton" onclick="incrementClick()" class="btn btn-dark text-light ">Play</button>
+                
+          <button  type="button" id="PlayButton" onclick="risky()" class="btn btn-dark text-light fs-custom">RiskyPlay</button>
         
               </div>
               <div class="">
-                <button  type="button" id="PlayButton" onclick="risky()" class="btn btn-dark text-light">RiskyPlay</button>
+              <button  type="button" id="PlayButton" onclick="Play()" class="btn btn-dark text-light  px-5 fs-custom">Play</button>
+              </div>
+              
+            </div>
+
+
+            <div class="col-md-10  d-flex justify-content-between p-3  ">
+              <div class="pe-5">
+                <button  type="button" id="PlayButton" onclick="Play2()" class="btn btn-dark text-light px-5 fs-custom">Play</button>
+        
+              </div>
+              <div class="">
+                <button  type="button" id="PlayButton" onclick="risky2()" class="btn btn-dark text-light fs-custom">RiskyPlay</button>
         
               </div>
               
@@ -113,4 +133,4 @@
     <script src="app.js"></script>
     <!-- !SECTION -->
   </body>
-</html>
+  </html>
