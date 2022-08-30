@@ -1,81 +1,44 @@
 // NOTE  🌏  GLOBAL VARIABLES
 let teamScore = 0;
 let enemyScore = 0;
-let Score = document.querySelector('#Score');
-let ScoreTwo = document.querySelector('#enemyScore');
-drawScore()
+let Score = document.querySelector('#score');
+let ScoreTwo = document.querySelector('#enemy-score');
+
 
 
 function team() {
-  
-    teamScore++;
-drawScore()
-
-  
- save()
- 
- console.log('team:',teamScore,'enemy:',enemyScore);
+  teamScore++;
+draw()
+  console.log('team:', teamScore, 'enemy:', enemyScore);
 }
 
-
 function enemy() {
- 
-  enemyScore++ ;
- drawScore()
-
-  save();
-  
-  console.log('team:',teamScore,'enemy:',enemyScore);
+  enemyScore++;
+  draw()
+  console.log('team:', teamScore, 'enemy:', enemyScore);
 }
 
 function team3() {
-  
-    teamScore+=3;
-drawScore()
-
-  
- save()
- 
- console.log('team:',teamScore,'enemy:',enemyScore);
+  teamScore += 3;
+  draw()
+  console.log('team:', teamScore, 'enemy:', enemyScore);
 }
-
 
 function enemy3() {
- 
-  enemyScore+=3 ;
- drawScore()
-
-  save();
-  
-  console.log('team:',teamScore,'enemy:',enemyScore);
+  enemyScore += 3;
+  draw()
 }
 
-
-
-// window.localStorage.setitem('Key-Name'), JSON.stringify(value)
-function save() {
-  window.localStorage.setItem('Score', JSON.stringify(teamScore));
-  window.localStorage.setItem('EnemyScore', JSON.stringify(enemyScore));
-  
-  // console.log('Team:', teamScore, 'Away:', enemyScore);
+function reset(){
+   teamScore=0
+   enemyScore=0
+   draw()
 }
 
-
-function drawScore(){
-   let teamData = JSON.parse(window.localStorage.getItem('Score'));
-  let enemyData = JSON.parse(window.localStorage.getItem('EnemyScore'));
- 
-  Score.innerHTML = `<div>${teamData}</div>`
-  ScoreTwo.innerHTML = `<div> ${enemyData} </div>`
+function draw(){
+  Score.innerHTML = teamScore
+  ScoreTwo.innerHTML= enemyScore
 }
-
-// function load() {
-
-
-  
-//   Score.innerHTML=teamData
-//   ScoreTwo.innerHTML=awayData
-// }
 
 //NOTE  HAVE TO RETURN THE VALUE USING return()
 //NOTE The Math.floor() function returns the largest integer less than or equal to a given number.
@@ -83,5 +46,3 @@ function drawScore(){
 function RandomNumber() {
   return Math.floor(Math.random() * 10);
 }
-
-
